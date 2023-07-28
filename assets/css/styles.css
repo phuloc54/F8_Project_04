@@ -174,6 +174,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 3px;
 }
 
 .hero-img__background:last-child {
@@ -351,7 +352,6 @@ a {
 /* ==========ABOUT========== */
 
 .about {
-    padding-top: 77px;
     background-color: var(--background-color);
 }
 
@@ -479,4 +479,98 @@ a {
     position: absolute;
     right: -51px;
     top: 157px;
+}
+
+/* ============FEATURES=========== */
+.features {
+    padding: 93px 0 185px;
+    background-color: var(--background-color);
+}
+
+.features-inner {
+    display: flex;
+    align-items: center;
+    gap: 127px;
+}
+
+.features-wrapper-image {
+    flex: 1 0;
+    width: 458px;
+    height: 500px;
+    border-radius: 18px;
+    border: 2px solid #fff;
+    background: linear-gradient(180deg, #c6e2fa 0%, #94c2ea 100%);
+    box-shadow: 0px 17px 77px -8px rgba(190, 165, 139, 0.17);
+}
+
+.features-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.features-content {
+    max-width: 557px;
+}
+
+.features-content__desc {
+    margin-top: 24px;
+    max-width: 511px;
+}
+
+.features-content__row {
+    position: relative;
+    margin-top: 52px;
+    display: flex;
+    gap: 56px;
+}
+
+.features-content__row::after, .features-content__row::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.features-content__row::after {
+    left: 18px;
+    bottom: -8px;
+    width: 557px;
+    opacity: 0.08;
+}
+
+.features-content__row::before {
+    width: 95px;
+    bottom: -8px;
+    left: 9px
+}
+
+.features-content__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features-content__label {
+    color: #48496a;
+    font-family: Sora;
+    font-size: 1.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.features-content__desc:last-of-type {
+    max-width: 391px;
+    margin-top: 36px;
+    font-size: 1.4rem;
+    line-height: 1.7;
+}
+
+.features__view-more {
+    display: inline-block;
+    margin-top: 32px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: underline;
 }

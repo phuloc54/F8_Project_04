@@ -39,6 +39,7 @@ a {
 .heading {
     color: var(--heading--color);
     font-family: "Sora";
+    word-break: break-all;
 }
 
 .heading.lv1 {
@@ -70,6 +71,7 @@ a {
     color: #656689;
     font-weight: 400;
     line-height: 1.87; /* 187.5% */
+    word-break: break-all;
 }
 
 /* ==========HEADER========== */
@@ -1088,4 +1090,90 @@ a {
     height: 8px;
     border-radius: 4px;
     background-color: var(--primary-color);
+}
+
+/* ==========BLOG=========== */
+.blog {
+    padding-bottom: 130px;
+    background-color: #fffaf5;
+}
+
+.blog-row-top {
+    display: flex;
+    align-items: center;
+}
+
+.blog__heading {
+    margin-right: 512px;
+}
+
+.blog-row-top__desc {
+    max-width: 350px;
+}
+
+.blog-row-top__cta {
+    margin-top: 24px;
+    min-width: 182px;
+    height: 56px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 31px;
+    transition: 0.2s;
+}
+
+.blog-row-top__cta:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.blog-list {
+    margin-top: 54px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 48px;
+}
+
+.blog-item {
+    border-radius: 24px;
+}
+
+.blog-item__bgc-thumb {
+    width: 100%;
+    padding: 24px 0 0 36px;
+    border-radius: 24px;
+    background-color: #90ccff;
+}
+
+.blog-item:nth-child(2) .blog-item__bgc-thumb{
+    background-color: #FF997E;
+}
+
+.blog-item:nth-child(3) .blog-item__bgc-thumb{
+    background-color: #5BD6E2;
+}
+
+.blog-item__date {
+    color: #fff;
+    font-family: Sora;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.blog-item__thumb {
+    margin-top: 25px;
+    display: block;
+    width: 322px;
+    height: 296px;
+    object-fit: cover;
+}
+
+.blog-item__title.heading.lv3 {
+    margin-top: 28px;
+    line-height: 1.54;
+}
+
+.blog-item__desc {
+    font-size: 1.4rem;
+    margin-top: 16px;
+    line-height: 1.71;
 }

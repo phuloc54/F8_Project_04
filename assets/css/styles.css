@@ -144,7 +144,7 @@ a {
 
 .hero {
     padding-top: 100px;
-    height: calc(100vh - 88px);
+    height: calc(942px - 88px);
     background-color: var(--background-color);
 }
 

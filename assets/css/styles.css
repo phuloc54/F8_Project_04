@@ -734,7 +734,8 @@ a {
 }
 
 .groomer-member-avt {
-    margin-top: -19px;
+    position: absolute;
+    bottom: 0;
     width: 100%;
     object-fit: cover;
     border-radius: 129.5px;
@@ -960,5 +961,131 @@ a {
 
 .pricing-column:hover .pricing-column__btn {
     color: #fff;
+    background-color: var(--primary-color);
+}
+
+/* ==========REVIEWS============== */
+.reviews {
+    padding: 130px 0 186px;
+    background-color: #fffaf5;
+}
+
+.reviews-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.reviews__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    color: var(--primary-color);
+
+    outline: none;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    border-radius: 50%;
+
+    transition: background-color, color, 0.3s;
+}
+
+.reviews__button-2__icon {
+    rotate: 180deg;
+}
+
+.reviews__button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.review-list {
+    display: flex;
+    overflow: hidden;
+}
+
+.reviews-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0 76px 0 44px;
+    padding-top: 22px;
+}
+
+.reviews__wrapper-image {
+    position: relative;
+    width: 274px;
+    height: 350px;
+    border-radius: 137px;
+    background: #ffda54;
+}
+
+.reviews__image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 137px;
+}
+
+.reviews-item__info {
+    max-width: 553px;
+    margin-left: 115px;
+}
+
+.review__desc {
+    margin-top: 24px;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.55; /* 155.556% */
+}
+
+.review__author {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 34px;
+    color: #282828;
+    font-family: Sora;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.review__author::before {
+    content: "";
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+}
+
+.reviews__control__location {
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    bottom: -56px;
+    display: flex;
+    gap: 8px;
+}
+
+.reviews__control__item {
+    width: 8px;
+    height: 8px;
+    border-radius: 100rem;
+    border: 1px solid var(--primary-color);
+}
+
+.reviews__control__item.active {
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
     background-color: var(--primary-color);
 }

@@ -671,7 +671,7 @@ a {
 }
 
 .services-content__column__cta {
-    position: absolute  ;
+    position: absolute;
     bottom: -100px;
     left: 50%;
     translate: -50% 0;
@@ -798,4 +798,167 @@ a {
 
 .groomer-cta:hover {
     color: white;
+}
+
+/* ==========PRICING========= */
+.pricing {
+    padding: 86px 0;
+    background-color: #fff6ed;
+}
+
+.pricing-inner-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing__desc {
+    margin-top: 24px;
+    max-width: 709px;
+    text-align: center;
+}
+
+.pricing__chooses {
+    display: flex;
+    position: relative;
+    margin-top: 38px;
+}
+
+.pricing__choose__label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+    width: 276px;
+    height: 56px;
+
+    border-radius: 31px;
+    border: 1px solid #ff5b2e;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.pricing__choose__label::before {
+    position: absolute;
+    right: 144px;
+    content: "";
+    display: inline-block;
+    width: 131px;
+    height: 56px;
+    border-radius: 31px;
+    background: #ff5b2e;
+    transition: 0.5s;
+}
+
+.pricing__chooses [type="checkbox"]:checked + label::before {
+    right: 0;
+}
+
+.pricing__label__text-1,
+.pricing__label__text-2 {
+    transition: 0.5;
+}
+
+.pricing__chooses__input:checked + .pricing__choose__label .pricing__label__text-2 {
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.pricing__chooses__input:not(:checked)
+    + .pricing__choose__label
+    .pricing__label__text-1 {
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.pricing-chooses__icon-sale {
+    position: absolute;
+    right: -110px;
+    bottom: 27px;
+}
+
+.pricing-list {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 44px;
+}
+
+.pricing-wrapper-list {
+    padding: 0 88px;
+}
+
+.pricing-column {
+    padding: 30px 28px 43px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.pricing-column__classify {
+    color: #ff5b2e;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.pricing-column__category-care {
+    margin-top: 8px;
+    color: #3f4065;
+    font-family: Sora;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.pricing-column__price {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--heading--color);
+    font-family: Sora;
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+
+.pricing-column__btn {
+    margin-top: 22px;
+    min-width: 246px;
+    height: 44px;
+    color: var(--primary-color);
+    border-radius: 39px;
+    border: 1px solid rgba(255, 91, 46, 0.6);
+    transition: 0.5s;
+}
+
+.pricing-column__sub-list {
+    margin-top: 24px;
+}
+
+.pricing__sub-list__item {
+    display: flex;
+    align-items: center;
+}
+
+.sub-list__item__icon.unchecked {
+    opacity: 0.5;
+}
+
+.sub-list__item__text {
+    color: #656689;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-left: 12px;
+}
+
+.pricing-column:hover {
+    translate: 0 -20px;
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-column:hover .pricing-column__btn {
+    color: #fff;
+    background-color: var(--primary-color);
 }

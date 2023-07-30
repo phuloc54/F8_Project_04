@@ -131,7 +131,7 @@ a {
     height: 50px;
     color: var(--heading--color);
     font-size: 1.4rem;
-    border: 1px solid var(--heading--color);
+    border: 1px solid rgba(0, 0, 98, 0.7);
     border-radius: 25px;
     transition: 0.5s;
 }
@@ -150,13 +150,14 @@ a {
 
 .hero-inner {
     display: flex;
-    justify-content: space-between;
+    gap: 121px;
     align-items: center;
 }
 
 .hero-images {
     position: relative;
     width: 47%;
+    /* anh Son k xet width don vi phan tram cho phan images ma chi xet widht voi dvi la px cho cac image item ben trong */
     height: 582px;
 }
 
@@ -165,19 +166,30 @@ a {
 }
 
 .hero-img__background:first-child {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* CSS nay co tac dung khi anh nho thi anh van o giua va o duoi cung trong bgc */
+
     width: 388px;
     height: 488px;
+
+    /* Widht va Height cua cac wrapper img anh Son de la width va height thoi, k dung max-w, max-h */
     border-radius: 16px;
     border: 3px solid #fff;
     background: linear-gradient(180deg, #ffa78d 0%, #ff8c60 100%);
     box-shadow: 11px 18px 65px 0px rgba(255, 155, 121, 0.12);
+
+    z-index: 1;
 }
 
 .hero-img__background:first-child .hero-img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    /* max width va max height de khi ta de 1 anh nho hon cai khung thi anh k bi keo dan to ra */
     object-fit: cover;
     border-radius: 3px;
+    border-radius: inherit;
 }
 
 .hero-img__background:last-child {
@@ -190,6 +202,7 @@ a {
     border-radius: 16px;
     border: 2px solid rgba(255, 255, 255, 0.65);
     box-shadow: 8px 18px 36px -6px rgba(234, 148, 157, 0.17);
+    z-index: 2;
 }
 
 .hero-img__background:last-child .hero-img {
@@ -197,6 +210,7 @@ a {
     height: 100%;
     padding-top: 24px;
     object-fit: cover;
+    border-radius: inherit;
 }
 
 .hero-images__label {
@@ -209,6 +223,7 @@ a {
     border-radius: 10px;
     background: #fff;
     box-shadow: -17px 14px 68px -4px rgba(207, 174, 132, 0.25);
+    z-index: 3;
 }
 
 .hero-images__label__row {
@@ -221,6 +236,7 @@ a {
     height: 40px;
     border-radius: 10px;
     background: #fec23f;
+    object-fit: cover;
 }
 
 .hero-images__label__thumb {
@@ -266,6 +282,7 @@ a {
     display: inline-block;
     width: 100%;
     height: 2px;
+    border-radius: 4px;
     background: #f2f2f2;
 }
 
@@ -284,21 +301,24 @@ a {
 .hero-images__icon:first-of-type {
     left: -58px;
     bottom: 103px;
-    z-index: -1;
 }
 
 .hero-images__icon:last-of-type {
     top: 16px;
     right: 130px;
-    z-index: -1;
 }
 
 .hero-content {
-    width: 43%;
+    width: 42.6%;
+}
+
+.hero-content__heading {
+    max-width: 465px;
 }
 
 .hero-content__desc {
-    max-width: 391px;
+    /* anh son dat dvi la width thoi */
+    max-width: 383px;
     margin-top: 24px;
 }
 
@@ -377,9 +397,11 @@ a {
 
 .about-content__heading {
     margin-top: 15px;
+    max-width: 446px;
 }
 
 .about-content__desc {
+    max-width: 427px;
     margin-top: 24px;
 }
 
@@ -415,20 +437,21 @@ a {
     white-space: nowrap;
 }
 
-.about-wrapper-image {
+.about-background-image {
     position: relative;
     flex-shrink: 0;
-    width: 42.2%;
+    width: 494px;
     height: 559px;
 }
 
 .about-img {
-    position: relative;
+    position: absolute;
     display: block;
-    bottom: 43px;
-    right: -23px;
+    bottom: 0;
+    left: 20px;
     width: 450px;
     height: 602px;
+    object-fit: cover;
     z-index: 2;
 }
 

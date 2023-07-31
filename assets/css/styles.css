@@ -688,98 +688,109 @@ a {
 }
 
 .services-content {
-    display: flex;
-    align-items: center;
-    margin-top: 35px;
+    margin-top: 71px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 71px;
 }
 
-.services-content__item {
+.services-item {
     width: 294px;
-    /* height: 208px; */
     padding: 30px 22px 30px 28px;
     border-radius: 10px;
     border: 2px solid rgba(255, 188, 122, 0.26);
     background: #fff;
 }
 
-.services-content__item__heading {
+.services-item__heading {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    color: #000958;
+    font-family: Sora;
+    font-size: 2.2rem;
+    font-weight: 600;
 }
 
-.services-content__item__heading::before {
+.services-item__heading::before {
     content: "";
     display: inline-block;
     width: 2px;
     height: 22px;
-    background: linear-gradient(63deg, #ff5b2e 0%, #ffa187 100%);
     border-radius: 3px;
+    background: linear-gradient(63deg, #ff5b2e 0%, #ffa187 100%);
 }
 
-.services-content__item__desc {
+.services-item__desc {
     margin-top: 18px;
+    color: #656689;
     font-size: 1.4rem;
-    line-height: 1.7;
+    font-weight: 400;
+    line-height: 1.71; /* 171.429% */
 }
 
-.services-content__item__read-more {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.services-item__link {
     margin-top: 24px;
+    display: inline-block;
     color: #34396a;
     font-family: Sora;
     font-size: 1.2rem;
-    font-weight: 200;
+    font-weight: 400;
 }
 
-.services-content__item + .services-content__item {
+.services-item__link {
+    display: flex;
+    align-items: center;
+}
+
+.services-item__link::after {
+    content: url(../icon/services-growth-icon.svg);
+    margin-left: 6px;
+}
+
+.services-item + .services-item {
     margin-top: 24px;
 }
 
-/* Column2 */
-.services-content__column:nth-of-type(2) {
-    margin-left: 64px;
-    margin-right: 71px;
+.services__wrapper-image {
+    position: relative;
+    margin-top: 15px;
+    width: 440px;
 }
 
-.services-content__column__img {
+.services__image {
+    position: relative;
+    width: 100%;
+    display: block;
+    z-index: 1;
+}
+
+.services__wrapper-image::after {
+    content: "";
     position: absolute;
     bottom: 0;
-    left: -17px;
-    display: block;
-    width: 447px;
-    height: 593px;
-    object-fit: cover;
-}
-
-.services-content__background-img {
-    position: relative;
-    bottom: -95px;
-    width: 410px;
+    left: 16px;
+    right: 16px;
+    display: inline-block;
     height: 350px;
     border-radius: 10px;
     background: linear-gradient(180deg, #9df1fb 0%, #73d0db 100%);
 }
 
-.services-content__column__cta {
-    position: absolute;
-    bottom: -100px;
-    left: 50%;
-    translate: -50% 0;
-    display: inline-flex;
-    min-width: 214px;
-    height: 56px;
-    border-radius: 31px;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    transition: 0.2s;
-    z-index: 10;
+.services__wrapper-cta {
+    text-align: center;
 }
 
-.services-content__column__cta:hover {
-    box-shadow: 0px 13px 26px -8px rgba(255, 91, 46, 0.42);
+.services__cta {
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 214px;
+    height: 56px;
+    color: var(--primary-color);
+    border: 1px solid currentColor;
+    border-radius: 30px;
 }
 
 /* =========GROOMERS=============== */

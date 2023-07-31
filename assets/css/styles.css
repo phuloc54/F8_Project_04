@@ -73,6 +73,13 @@ a {
     line-height: 1.87; /* 187.5% */
 }
 
+.section-label {
+    color: #5e6085;
+    font-family: Sora;
+    font-weight: 600;
+    text-align: center;
+}
+
 /* ==========HEADER========== */
 .header {
     padding-top: 14px;
@@ -83,7 +90,7 @@ a {
     position: sticky;
     top: -14px;
     left: 0;
-    z-index: 1;
+    z-index: 5;
 }
 
 .header-inner {
@@ -369,157 +376,169 @@ a {
     font-weight: 500;
     text-decoration-line: underline;
 }
-
-/* ==========ABOUT========== */
-
+/* ===============ABOUT=============== */
 .about {
-    background-color: var(--background-color);
+    padding: 53px 0 185px;
+    background: #fffaf5;
 }
 
-.about-wrapper {
-    padding: 53px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about-content {
-    width: 41%;
-}
-
-.about-content__label {
-    color: #5e6085;
-    font-family: Sora;
-    font-weight: 600;
-}
-
-.about-content__heading {
-    margin-top: 15px;
-    max-width: 446px;
-    /* anh Son dat width thoi k dung max-width*/
-}
-
-.about-content__desc {
-    max-width: 427px;
-    margin-top: 24px;
-}
-
-.about-content__list {
+.about-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 34px 36px;
+    align-items: center;
+}
+
+.about__media {
+    position: relative;
+}
+
+/* ABOUT CONTENT - COLUMN 1 */
+
+.about__label {
+    text-align: left;
+}
+
+.about__heading {
+    margin-top: 15px;
+    max-width: 446px;
+}
+
+.about__desc {
+    max-width: 431px;
+}
+
+.about__check-list {
     margin-top: 54px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: flex-start;
+    row-gap: 34px;
+    column-gap: 36px;
 }
 
-.about-content__item {
+.about__check-item {
+    position: relative;
     display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.about-content__item__icon {
-    display: flex;
-    justify-content: center;
     align-items: center;
 
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    background-color: var(--primary-color);
-}
-
-.about-content__item__desc {
     color: #48496a;
     font-size: 1.8rem;
     font-weight: 500;
-    white-space: nowrap;
 }
 
-.about-wrapper-image {
-    position: relative;
-    flex-shrink: 0;
-    width: 494px;
-    height: 559px;
+.about__check-item::before {
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
 }
 
-.about-img {
+.about__check-item::after {
+    content: url(../icon/about-check-icon.svg);
     position: absolute;
-    display: block;
-    bottom: 0;
-    left: 20px;
-    width: 450px;
-    /* ko can xet height cho image vi khi ta xet 1 canh thi chieu con lai co kich thuoc la auto */
-    object-fit: cover;
-    z-index: 2;
+    top: 2px;
+    left: 4px;
 }
 
-.about-image__background {
+/*ABOUT MEDIA - COLUMN 2  */
+.about-card {
     position: absolute;
-    bottom: 0;
-    z-index: 1;
-    width: 100%;
-    height: 336px;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #fce0ef 0%, #fac3d1 100%);
-    box-shadow: 11px 18px 65px 0px rgba(255, 155, 121, 0.12);
-}
-
-.about-image__card {
-    position: absolute;
-    left: -92px;
-    top: 165px;
-    padding: 30px 26px;
+    top: 157px;
+    left: 0;
     width: 136px;
     height: 156px;
+    padding: 30px 26px;
     border-radius: 10px;
     background: #5bd6e2;
     box-shadow: -15px 26px 48px 0px rgba(85, 240, 255, 0.17);
-    z-index: 1;
+    text-align: center;
+    z-index: 2;
 }
 
-.about__big-number {
+.about-card__title {
     color: #fff;
     font-family: Sora;
     font-size: 4.2rem;
     font-weight: 700;
+    line-height: 1; /* 100% */
 }
 
-.about-image__card__desc {
+.about-card__desc {
     margin-top: 14px;
     color: #c6f4f9;
-    text-align: center;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.42; /* 142.857% */
 }
 
-.about-image__card__icon {
+.about-card__decor {
     position: absolute;
-    right: -32px;
     top: -39px;
+    right: -36px;
 }
 
-.about-image-icon {
+.about__wrapper-image {
+    position: relative;
+    margin-left: auto;
+    /*de cho wrapper-image dc sat sang ben le phai  */
+    width: 494px;
+}
+
+/* background image about*/
+.about__wrapper-image::after {
+    content: "";
+
     position: absolute;
-    right: -51px;
-    top: 157px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* cac cach tuong duong khi k dung left right bottom */
+    /* inset: auto 0 0 0; */
+    /* width: 100%; */
+
+    /* width 100% cua pseudo after duoc can chinh theo width cua the cha gan nhat cua no co position relative */
+
+    height: 336px;
+    background-color: #fff;
+
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fce0ef 0%, #fac3d1 100%);
+    box-shadow: 11px 18px 65px 0px rgba(255, 155, 121, 0.12);
 }
 
-/* ============FEATURES=========== */
-.features {
-    padding: 93px 0 185px;
-    background-color: var(--background-color);
+.about__image {
+    position: relative;
+    z-index: 1;
+    /* CSS lam cho image nam de len background */
+    display: block;
+    margin: 0 auto;
+    /* center image trong wrapper-image */
+
+    width: 450px;
+    object-fit: cover;
 }
 
-.features-inner {
-    display: flex;
-    align-items: center;
-    gap: 127px;
+.about__media__decor-top {
+    position: absolute;
+    top: 149px;
+    right: -72px;
 }
 
-.features-wrapper-image {
-    flex: 1 0;
+/* ABOUT MEDIA - COLUMN 3 */
+.about__media--bottom {
+    margin-top: 146px;
+}
+.about__wrapper-image--bottom {
     width: 458px;
+    margin-left: 0;
+}
+
+.about__wrapper-image--bottom::after {
+    content: "";
     height: 500px;
     border-radius: 18px;
     border: 2px solid #fff;
@@ -527,89 +546,134 @@ a {
     box-shadow: 0px 17px 77px -8px rgba(190, 165, 139, 0.17);
 }
 
-.features-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
+.about-image-bottom {
+    width: 458px;
+    display: block;
 }
 
-.features-content {
-    max-width: 557px;
+.about__media__decor {
+    position: absolute;
+    z-index: 1;
 }
 
-.features-content__desc {
+.about__media__decor:nth-child(1) {
+    top: 13px;
+    right: 64px;
+}
+
+.about__media__decor:nth-child(2) {
+    top: -16px;
+    right: 13px;
+}
+
+.about__media__decor:nth-child(3) {
+    top: 33px;
+    right: -21px;
+}
+
+.about__media__decor:nth-child(4) {
+    top: 270px;
+    right: -33px;
+}
+
+.about__media__decor:nth-child(5) {
+    bottom: 150px;
+    right: 20px;
+}
+
+.about__media__decor:nth-child(6) {
+    bottom: -55px;
+    right: -42px;
+}
+
+/* Column 4 */
+.about__desc-bottom {
     margin-top: 24px;
     max-width: 511px;
 }
 
-.features-content__row {
-    position: relative;
+.about__tab-list {
     margin-top: 52px;
-    display: flex;
-    gap: 56px;
 }
 
-.features-content__row::after,
-.features-content__item::after {
-    position: absolute;
-    content: "";
-    height: 2px;
-    background-color: var(--primary-color);
+.about__tab-row {
+    position: relative;
+    display: inline-flex;
+    column-gap: 56px;
+    /* padding bottom de cho phan after dich xuong 10px va co the tuong tac voi cac phan tu khac o duoi no */
+    border-radius: 2px;
 }
 
-.features-content__row::after {
-    left: 8px;
-    bottom: -8px;
-    width: 557px;
-    opacity: 0.08;
-}
-
-.features-content__item {
+.about__tab-item {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
+    column-gap: 11px;
+    padding-bottom: 10px;
 }
 
-.features-content__item--active {
-    position: relative;
-}
-
-.features-content__item--active::after {
-    width: 95px;
-    bottom: -8px;
-}
-
-.features-content__label {
+.about__tab-item__title {
     color: #48496a;
     font-family: Sora;
     font-size: 1.8rem;
     font-weight: 600;
-    white-space: nowrap;
 }
 
-.tab-content__item {
+.about__tab-row::after,
+.about__tab-item--active::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    opacity: 0.07000000029802322;
+    background: #ff5b2e;
+}
+
+.about__tab-item--active::after {
+    width: 95px;
+    opacity: 1;
+    border-radius: 2px;
+}
+
+.about__tab-contents {
+    margin-top: 36px;
+}
+
+.about__tab-content-item {
     position: absolute;
     visibility: hidden;
 }
 
-.tab-content__item--acitve {
+.about__tab-content-item--active {
     visibility: visible;
 }
 
-.features-item__desc {
-    max-width: 391px;
-    margin-top: 36px;
+.tab-content__desc {
+    width: 391px;
     font-size: 1.4rem;
-    line-height: 1.7;
+    line-height: 1.71;
 }
 
-.features__view-more {
+.tab-content__link {
+    position: relative;
     display: inline-block;
     margin-top: 32px;
+    color: #ff5d31;
     font-weight: 500;
-    color: var(--primary-color);
-    text-decoration: underline;
+}
+
+.tab-content__link::after {
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    content: "";
+    display: inline-block;
+    width: 86px;
+    height: 1.5px;
+    background: #ff5d31;
+    border-radius: 2px;
 }
 
 /* ==============SERVICES============ */
@@ -618,13 +682,6 @@ a {
     background-color: #fff6ed;
 }
 
-.services__question,
-.groomers__label {
-    color: #5e6085;
-    font-family: Sora;
-    font-weight: 600;
-    text-align: center;
-}
 .services__heading {
     margin-top: 15px;
     text-align: center;
@@ -638,7 +695,7 @@ a {
 
 .services-content__item {
     width: 294px;
-    height: 208px;
+    /* height: 208px; */
     padding: 30px 22px 30px 28px;
     border-radius: 10px;
     border: 2px solid rgba(255, 188, 122, 0.26);
@@ -727,7 +784,7 @@ a {
 
 /* =========GROOMERS=============== */
 .groomers {
-    padding: 68px 0 100px;
+    padding: 130px 0;
     background-color: #fffaf5;
 }
 
@@ -875,6 +932,8 @@ a {
     border: 1px solid #ff5b2e;
     font-weight: 600;
     color: var(--primary-color);
+
+    user-select: none;
 }
 
 .pricing__choose__label::before {

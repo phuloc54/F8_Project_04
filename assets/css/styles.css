@@ -1080,6 +1080,7 @@ a {
 .pricing__sub-list__item {
     display: flex;
     align-items: center;
+    margin-top: 18px;
 }
 
 .sub-list__item__icon.unchecked {

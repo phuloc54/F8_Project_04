@@ -1154,23 +1154,32 @@ a {
     align-items: center;
     flex-shrink: 0;
     margin: 0 76px 0 44px;
+    /* khoang cach giua review list va 2 button */
     padding-top: 22px;
 }
 
 .reviews__wrapper-image {
     position: relative;
     width: 274px;
-    height: 350px;
     border-radius: 137px;
-    background: #ffda54;
 }
 
 .reviews__image {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 100%;
-    object-fit: cover;
-    border-radius: 137px;
+    border-radius: inherit;
+    z-index: 1;
+    display: block;
+}
+
+.reviews__wrapper-image::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    /* background-image co width la 100% va co position o bottom 0 trong wrapper image */
+    height: 82%;
+    background-color: #ffda54;
+    border-radius: inherit;
 }
 
 .reviews-item__info {
